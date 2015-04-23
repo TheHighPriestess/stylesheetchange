@@ -1,3 +1,9 @@
+@import url("http://fonts.googleapis.com/css?family=Cutive+Mono");
+
+body {
+	font-family: 'Cutive Mono', sans-serif ;
+}
+
 #sidebar {
 	background-color: #afb42b;
 }

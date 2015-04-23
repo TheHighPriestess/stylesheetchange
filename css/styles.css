@@ -1,3 +1,7 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,800,400,300");
+
+
+
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -67,7 +71,7 @@ button {
   font-size: 20px;
   background: #fff;
   padding: 10px 20px 10px 20px;
-  border: solid #212121 1px;
+  border: solid #fff 1px;
   text-decoration: none;
   cursor: pointer;
   margin-bottom: 10px;
@@ -79,8 +83,14 @@ button:hover {
   background: #cddc39;
   text-decoration: none;
   cursor: hand;
+  color: #fff;
+  font-weight: 700;
 }
 
 button.togglebutton {
 	margin-bottom: 35px;
+}
+
+button:focus {
+  outline: 0;
 }

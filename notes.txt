@@ -1,0 +1,6 @@
+Basically, the browser never sees CSS in terms of individual stylesheets. If there are multiple stylesheets, they are all treated as if they were one giant stylesheet, and rules are evaluated accordingly.
+
+If all of the selectors have the same specificity, then the most recent decleration is used:
+
+Generally the last rule takes precedence. With that being said, there are "exceptions" in that inline styles take precedence over external stylesheets ( an inline !important is more important than an external !important, etc ), and more specific selectors override generic selectors.
+
