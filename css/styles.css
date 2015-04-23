@@ -1,0 +1,86 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+p, h2 {
+	color: #666;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 1.4em;
+	color: white;
+	font-weight: 300;
+	line-height: 1.25em;
+}
+
+h2 {
+
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+#sidebar {
+  position: fixed;
+  margin: 0;
+  width: 30%;
+  background-color: #03a9f4;
+  height: 100%;
+}
+
+#sidebar-content {
+	margin-left: 40%;
+	margin-right: 5%;
+	margin-top: 200px;
+}
+
+#sidebar-content h1 {
+	margin-top: 20px;
+	margin-right: 20%;
+
+}
+
+#content {
+  margin: 0 10% 40px 37%;
+  padding-top: 50px;
+}
+
+#main {
+	
+}
+
+/*** FONT AWESOME ***/
+
+.fa {
+	color: #cddc39;
+}
+
+button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Courier New;
+  color: #212121;
+  font-size: 20px;
+  background: #fff;
+  padding: 10px 20px 10px 20px;
+  border: solid #212121 1px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 200px;
+
+}
+
+button:hover {
+  background: #cddc39;
+  text-decoration: none;
+  cursor: hand;
+}
+
+button.togglebutton {
+	margin-bottom: 35px;
+}
