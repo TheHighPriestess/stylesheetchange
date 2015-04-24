@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sunburst.css">
   <link rel="stylesheet" href="" id="colorswitch">
 </head>
 
@@ -20,9 +21,9 @@
 			<h1>Two ways to use jQuery to change colors, fonts etc.</h1>
 			<br/>
 			<button type="button" class="togglebutton">toggle button</button>
-			<button type="button">style one</button>
-			<button type="button">style two</button>
-			<button type="button">style three</button>
+			<button type="button" class="styleone">style one</button>
+			<button type="button" class="styletwo">style two</button>
+			<button type="button" class="stylethree">style three</button>
 
 		</div>
 	</div>
@@ -32,9 +33,15 @@
 
 		<br/>
 		<p>This method takes advantage of the fact that in CSS the last rule takes precedence. The stylesheet with the alternate styles is placed after the main stylesheet in the HTML.</p>
+		<pre><code class="html sunburst"><button type="button" class="stylethree">style three</button></code></pre>
+		
+		
 	</div>	
 
 </body>
 <script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="js/app.js"></script>
+
 </html>

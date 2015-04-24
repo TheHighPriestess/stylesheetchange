@@ -5,5 +5,6 @@ $(".togglebutton").click(function(){
 	}
 	else $("#colorswitch").attr("href", "css/newcolors.css");
 	});
+
 	 
 });

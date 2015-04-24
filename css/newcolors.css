@@ -7,3 +7,12 @@ body {
 #sidebar {
 	background-color: #afb42b;
 }
+
+.fa {
+	color: #e040fb;
+}
+
+button:hover{
+	background: #f0f4c3;
+	color: #212121;
+};
