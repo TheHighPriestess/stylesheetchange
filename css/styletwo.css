@@ -1,0 +1,27 @@
+@import url("http://fonts.googleapis.com/css?family=Lora");
+
+body {
+	font-family: 'Lora', serif;
+	background-color: #B6B6B6;
+}
+
+h2 {
+	color: #fff;
+}
+
+#sidebar {
+	background-color: #455A64;
+}
+
+.fa {
+	color: #FF5252;
+}
+
+button.styletwo {
+	background: #009688;
+}
+
+button:hover{
+	background: #009688;
+	color: #fff;
+};

@@ -1,0 +1,26 @@
+@import url("http://fonts.googleapis.com/css?family=Asap:400,700");
+
+body {
+	font-family: 'Asap', sans-serif;
+	background-color: #B2DFDB;
+}
+
+#sidebar {
+	background-color: #E64A19;
+}
+
+
+
+.fa {
+	color: #009688;
+}
+
+button.styleone {
+	background: #009688;
+	color: #fff;
+}
+
+button:hover{
+	background: #009688;
+	color: #fff;
+};

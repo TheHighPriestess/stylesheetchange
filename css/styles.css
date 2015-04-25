@@ -101,3 +101,16 @@ button.togglebutton {
 button:focus {
   outline: 0;
 }
+
+button.styleone {
+  background: #E64A19;
+}
+
+button.styletwo {
+  background: #455A64;
+  color: #fff;
+}
+
+button.stylethree {
+  background: #FFEB3B;
+}

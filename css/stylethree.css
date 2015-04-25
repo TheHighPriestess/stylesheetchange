@@ -1,0 +1,22 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway:400,700");
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+#sidebar {
+	background-color: #5D4037;
+}
+
+.fa {
+	color: #FFEB3B;
+}
+
+button.stylethree {
+	background: #FFEB3B;
+}
+
+button:hover{
+	background: #009688;
+	color: #fff;
+};
