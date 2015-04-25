@@ -9,6 +9,7 @@
   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,800,400,300' rel='stylesheet' type='text/css' id="fontswitch">-->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="" id="colorswitch">
 </head>
@@ -19,7 +20,7 @@
 			<i class="fa fa-circle fa-5x"></i>
 			<h1>Two ways to use jQuery to change colors, fonts etc.</h1>
 			<br/>
-			<button type="button" class="togglebutton">toggle button</button>
+			<button type="button" class="togglebutton">toggle me!</button>
 			<button type="button" class="styleone">style one</button>
 			<button type="button" class="styletwo">style two</button>
 			<button type="button" class="stylethree">style three</button>
@@ -28,17 +29,53 @@
 	</div>
 
 	<div id="content">
-		<h2>How it's done</h2>
+		<h2>One toggle button or multiple buttons</h2>
+		<p>Both methods take advantage of the fact that in CSS, despite some exceptions like inline styles, the last rule takes precedence.</p>
+		<br/>
+		<p>For example, if you have links to two stylesheets in your HTML...</p>
+		<pre><code class="language-markup">
+&lt;link rel="stylesheet" href="css/style1.css"&gt;
+&lt;link rel="stylesheet" href="css/style2.css"&gt;</code></pre>
+		<p>...and in style1.css you have this:</p>
+		<pre><code class="language-css">h1 { color: red }</code></pre>
+		<p>...and in style2.css you have this:</p>
+		<pre><code class="language-css">h1 { color: blue }</code></pre>
+		<p>Your h1 tag will be blue because style2.css comes after style1.css.  We can use this to our advantage when we want to offer the user a way to change colors, fonts etc. There are, of course, other ways to do this.  However, this is the way I do it.</p> 
+		<br/>
+		<h3>1. Toggle button to change back and forth between two different stylesheets</h2>
 
 		<br/>
-		<p>This method takes advantage of the fact that in CSS the last rule takes precedence. The stylesheet with the alternate styles is placed after the main stylesheet in the HTML.</p>
 		
-		
-		
+		<p>If you haven't already done so click the "toggle me!" button to see the effect.</p>
+		<br/>
+		<p>In the &lt;head&gt; area of my HTML I have the following stylesheets:</p>
+		<pre><code class="language-markup">
+&lt;link rel="stylesheet" href="css/reset.css"&gt;
+&lt;link rel="stylesheet" href="css/prism.css"&gt;
+&lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;link rel="stylesheet" href="" id="colorswitch"&gt;</code></pre>
+		<p>The last stylesheet's href attribute is empty and it has the id "colorswitch".</p>
+		<br/>
+		<p>I'm using <a href="https://jquery.com/">jQuery</a> to populate the href attribute with the alternate stylesheet, newcolors.css, when someone clicks the "toggle me!' button. When that happens the styles in newcolors.css will take precedence over those sames styles in styles.css because it is placed after it in the HTML. When the button is clicked again the newcolors.css attribute is removed and the styles in styles.css takes over again.</p>
+		<br/>
+		<p>Very simple.  Here's the jQuery. I have it in a file called app.js:</p>
+		<pre><code class="language-javascript">$(document).ready(function(){
+$(".togglebutton").click(function(){
+	if ($("#colorswitch").attr("href")){
+		$("#colorswitch").removeAttr("href");
+	}
+	else $("#colorswitch").attr("href", "css/newcolors.css");
+	});	 
+});</code></pre>
+	<p>Include it in your index.html file...</p>
+	<pre><code class="language-markup">
+&lt;script src="js/app.js"&gt;&lt;/script&gt;</code></pre>	
+	<p>...and you're all set.</p>	
 	</div>	
 
 </body>
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/app.js"></script>
+<script src="js/prism.js"></script>
 
 </html>
