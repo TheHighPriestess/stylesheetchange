@@ -42,7 +42,7 @@
 		<pre><code class="language-css">h1 { color: blue }</code></pre>
 		<p>Your h1 tag will be blue because style2.css comes after style1.css.  We can use this to our advantage when we want to offer the user a way to change colors, fonts etc. There are, of course, other ways to do this.  However, this is the way I do it.</p> 
 		<br/>
-		<h3>1. Toggle button to change back and forth between two different stylesheets</h2>
+		<h3>1. Toggle button to change back and forth between two different stylesheets</h3>
 
 		<br/>
 		
@@ -70,7 +70,34 @@ $(".togglebutton").click(function(){
 	<p>Include it in your index.html file...</p>
 	<pre><code class="language-markup">
 &lt;script src="js/app.js"&gt;&lt;/script&gt;</code></pre>	
-	<p>...and you're all set.</p>	
+	<p>...and you're all set.</p>
+	<h3>2. Multiple buttons</h3>
+	<br/>
+	<p>This particular example gives the user three different styles to choose from depending on which button is clicked. The HTML contains the following:</p>
+	<pre><code class="language-markup">
+&ltbutton type="button" class="styleone"&gt;style one&lt/button&gt;
+&ltbutton type="button" class="styletwo"&gt;style two&lt/button&gt;
+&ltbutton type="button" class="stylethree"&gt;style three&lt/button&gt;</code></pre>
+	<p>Here's the jQuery.  If the user clicks on the button with the class "styleone" the href attribute changes to styleone.css etc.</p>
+	<pre><code class="language-javascript">$(".styleone").click(function(){
+	$("#colorswitch").attr("href","css/styleone.css");
+});
+
+$(".styletwo").click(function(){
+	$("#colorswitch").attr("href","css/styletwo.css");
+});
+
+$(".stylethree").click(function(){
+	$("#colorswitch").attr("href","css/stylethree.css");
+});
+});</code></pre>
+<p>Remember...this is working because CSS rules that come later take precedence and the stylesheet with the ID "colorswitch" has been placed after the other stylesheets:</p>
+<pre><code class="language-markup">
+&lt;link rel="stylesheet" href="css/reset.css"&gt;
+&lt;link rel="stylesheet" href="css/prism.css"&gt;
+&lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;link rel="stylesheet" href="" id="colorswitch"&gt;</code></pre>
+ <p>When the href attribute gets a value as soon as the user clicks a button the styles in the other stylesheets can be overidden.</p>
 	</div>	
 
 </body>
