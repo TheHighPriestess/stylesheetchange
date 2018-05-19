@@ -27,23 +27,24 @@
 	</div>
 
 	<div id="content">
-		<h2>One toggle button or multiple buttons</h2>
-		<p>Both methods take advantage of the fact that in CSS, despite some exceptions like inline styles, the last rule takes precedence.</p>
+    <p>This method works with one toggle button or multiple buttons. Both methods take advantage of the fact that in CSS, despite some exceptions like inline styles, the last rule takes precedence.</p>
 		<br/>
 		<p>For example, if you have links to two stylesheets in your HTML...</p>
 		<pre><code class="language-markup">
 &lt;link rel="stylesheet" href="css/style1.css"&gt;
 &lt;link rel="stylesheet" href="css/style2.css"&gt;</code></pre>
-		<p>...and in style1.css you have this:</p>
+		<p>...and in <i>style1.css</i> you have this:</p>
 		<pre><code class="language-css">h1 { color: red }</code></pre>
-		<p>...and in style2.css you have this:</p>
+		<p>...and in <i>style2.css</i> you have this:</p>
 		<pre><code class="language-css">h1 { color: blue }</code></pre>
-		<p>Your h1 tag will be blue because style2.css comes after style1.css.  We can use this to our advantage when we want to offer the user a way to change colors, fonts etc. There are, of course, other ways to do this.  However, this is the way I do it.</p> 
+    <p>Your h1 tag will be blue because <i>style2.css</i> is listed after <i>style1.css</i>.</p>
+    <br/>
+		<p>We can use this to our advantage when we want to offer the user a way to change colors, fonts etc. For example, perhaps someone with vision problems would like to see a different color scheme or font size.</p>
 		<br/>
-		<h3>1. Toggle button to change back and forth between two different stylesheets</h3>
+		<h3>How to use a toggle button to change back and forth between two different stylesheets</h3>
 
 		<br/>
-		
+
 		<p>If you haven't already done so click the "toggle me!" button to see the effect.</p>
 		<br/>
 		<p>In the &lt;head&gt; area of my HTML I have the following stylesheets. (You could load all the stylesheets up-front in order to minimize any switching delay. However, I haven't done that here.)</p>
@@ -52,31 +53,31 @@
 &lt;link rel="stylesheet" href="css/prism.css"&gt;
 &lt;link rel="stylesheet" href="css/styles.css"&gt;
 &lt;link rel="stylesheet" href="" id="colorswitch"&gt;</code></pre>
-		<p>The last stylesheet's href attribute is empty and it has the id "colorswitch".</p>
+		<p>Note that the last stylesheet's href attribute is empty and has the id colorswitch.</p>
 		<br/>
-		<p>I'm using <a href="https://jquery.com/">jQuery</a> to populate the href attribute with the alternate stylesheet, newcolors.css, when someone clicks the "toggle me!' button. When that happens the styles in newcolors.css will take precedence over those sames styles in styles.css because it is placed after it in the HTML. When the button is clicked again the newcolors.css attribute is removed and the styles in styles.css takes over again.</p>
+		<p>I'm using <a href="https://jquery.com/">jQuery</a> to populate the href attribute with the alternate stylesheet, <i>newcolors.css</i>, when someone clicks the "toggle me!' button. When that happens the styles in <i>newcolors.css</i> will take precedence over those sames styles in <i>styles.css</i> because it is placed after it in the HTML. When the button is clicked again the <i>newcolors.css</i> attribute is removed and the styles in <i>styles.css</i> takes over again.</p>
 		<br/>
-		<p>Very simple.  Here's the jQuery. I have it in a file called app.js:</p>
+		<p>Here's the jQuery. I have it in a file called <i>app.js</i>:</p>
 		<pre><code class="language-javascript">$(document).ready(function(){
 $(".togglebutton").click(function(){
 	if ($("#colorswitch").attr("href")){
 		$("#colorswitch").removeAttr("href");
 	}
 	else $("#colorswitch").attr("href", "css/newcolors.css");
-	});	 
+	});
 });</code></pre>
-	<p>Include it in your index.html file...</p>
+	<p>Include it in your <i>index.html</i> file and you're all set:</p>
 	<pre><code class="language-markup">
-&lt;script src="js/app.js"&gt;&lt;/script&gt;</code></pre>	
-	<p>...and you're all set.</p>
-	<h3>2. Multiple buttons</h3>
+&lt;script src="js/app.js"&gt;&lt;/script&gt;</code></pre>
+
+	<h3>How to use multiple buttons to change back and forth between different stylesheets</h3>
 	<br/>
 	<p>This particular example gives the user three different styles to choose from depending on which button is clicked. The HTML contains the following:</p>
 	<pre><code class="language-markup">
 &ltbutton type="button" class="styleone"&gt;style one&lt/button&gt;
 &ltbutton type="button" class="styletwo"&gt;style two&lt/button&gt;
 &ltbutton type="button" class="stylethree"&gt;style three&lt/button&gt;</code></pre>
-	<p>Here's the jQuery.  If the user clicks on the button with the class "styleone" the href attribute changes to styleone.css etc.</p>
+	<p>Here's the jQuery.  If the user clicks on the button with the class "styleone" the href attribute changes to <i>styleone.css</i> etc.</p>
 	<pre><code class="language-javascript">$(".styleone").click(function(){
 	$("#colorswitch").attr("href","css/styleone.css");
 });
@@ -89,7 +90,7 @@ $(".stylethree").click(function(){
 	$("#colorswitch").attr("href","css/stylethree.css");
 });
 });</code></pre>
-<p>Remember...this is working because CSS rules that come later take precedence and the stylesheet with the ID "colorswitch" has been placed after the other stylesheets:</p>
+<p>Remember, this is working because CSS rules that come later take precedence and the stylesheet with the ID "colorswitch" has been placed after the other stylesheets:</p>
 <pre><code class="language-markup">
 &lt;link rel="stylesheet" href="css/reset.css"&gt;
 &lt;link rel="stylesheet" href="css/prism.css"&gt;
@@ -97,10 +98,10 @@ $(".stylethree").click(function(){
 &lt;link rel="stylesheet" href="" id="colorswitch"&gt;</code></pre>
  <p>When the href attribute gets a value as soon as the user clicks a button the styles in the other stylesheets can be overidden.</p>
  <br/>
- <p>NOTE: @import method is used on each stylesheet if you want to change fonts.</p>
+ <p>Use the @import method on each stylesheet if you want to change fonts.</p>
  <br/>
  <p>(I'm using <a href="http://prismjs.com/">prismjs</a> for the syntax highlighting. I tried a few others and this one turned out to be the easiest to work with.)</p>
-	</div>	
+	</div>
 
 </body>
 <script src="js/jquery-1.11.2.min.js"></script>

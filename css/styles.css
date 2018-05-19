@@ -32,6 +32,10 @@ h3 {
   font-weight: 700;
 }
 
+i {
+	font-style: italic;
+}
+
 #sidebar {
   position: fixed;
   margin: 0;
